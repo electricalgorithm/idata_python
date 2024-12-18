@@ -1,0 +1,14 @@
+[Unit]
+Description=iDATA Free Time Slot Searcher Service for Altunizade
+After=network.target
+
+[Service]
+ExecStart=/home/user/idata_python/venv/bin/python /home/user/idata_python/free_time_slot_searcher_altunizade.py
+Restart=always
+User=user
+WorkingDirectory=/home/user/idata_python/
+ExecStartPre=/bin/sleep 15
+RestartSec=5
+
+[Install]
+WantedBy=default.target

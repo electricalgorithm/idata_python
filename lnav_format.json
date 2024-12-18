@@ -1,0 +1,31 @@
+{
+	"idata_log": {
+		"title": "iData Log Format",
+		"description": "Custom log format for your logs",
+		"url": "http://idata.com",
+		"regex": {
+			"main": {
+				"pattern": "\\[(?<timestamp>\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2})\\] -- (?<level>\\S*) -- (?<module>\\S*) \\((?<function>\\S*)\\): (?<message>.*)"
+			}
+		},
+		"value": {
+			"timestamp": { "kind": "string"},
+			"level": { "kind": "string", "identifier": true},
+			"module": { "kind": "string", "identifier": true},
+			"function": {"kind": "string"},
+			"message": { "kind": "string"}
+		},
+		"sample": [
+			{
+				"line": "[2023-10-20 22:00:20] -- [DEBUG] -- IDataRequester (post_request): Response status code: 200"
+			},
+			{
+				"line": "[2023-10-20 22:00:20] -- [INFO] -- IDataAppointmentFinder (check_for_specific_date): Gayrettepe: No free time slots on 17-11-2023."
+			},
+			{
+				"line": "[2023-10-20 22:00:41] -- [DEBUG] -- urllib3.connectionpool (_new_conn): Starting new HTTPS connection (1): deu-schengen.idata.com.tr:443"
+			}
+		]
+	}
+}
+
